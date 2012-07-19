@@ -40,3 +40,22 @@ describe 'A shopping basket with two items in it', ->
   it 'should have a total of 169', ->
     expect(myBasket.total()).toBe 169
 
+describe 'A VAT capable shopping basket with two items in it', ->
+  myBasket = 0
+
+  beforeEach ->
+    myBasket = (new BasketFactory).getVATBasketWithItems()
+    myBasket.addItem('Corn Flakes', 75)
+    myBasket.addItem('Butter', 25)
+    
+  it 'should not be empty', ->
+    expect(myBasket.isEmpty()).toBe false
+
+  it 'should have two items in it', ->  
+    expect(myBasket.numberOfItems()).toBe 2
+  
+  it 'should have a total of 100', ->
+    expect(myBasket.total()).toBe 100
+
+  it 'should have a total with VAT of 120', ->
+    expect(myBasket.totalWithVAT()).toBe 120

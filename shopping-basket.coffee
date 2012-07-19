@@ -7,6 +7,8 @@ class BasketFactory
   getBasketWithItems: ->
     new BasketWithItems
 
+  getVATBasketWithItems: ->
+    new VATBasketWithItems
 
 class EmptyBasket
   constructor: ->
@@ -31,6 +33,11 @@ class BasketWithItems extends EmptyBasket
   isEmpty: ->
     @items.length is 0
     
+class VATBasketWithItems extends BasketWithItems
+  totalWithVAT: ->
+    Math.round(@total() * 1.20)
+
 exports.BasketFactory = BasketFactory
 exports.EmptyBasket = EmptyBasket
 exports.BasketWithItems = BasketWithItems
+exports.VATBasketWithItems = VATBasketWithItems
