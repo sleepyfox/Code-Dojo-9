@@ -1,3 +1,6 @@
+basket = require './shopping-basket'
+BasketFactory = basket.BasketFactory
+
 describe 'An empty shopping basket', ->
   it 'should return a total of zero', ->
     myBasket = (new BasketFactory).getEmptyBasket()
@@ -10,34 +13,3 @@ describe 'A shopping basket with one item in it', ->
     myBasket.addItem('Corn Flakes', 99)
     expect(myBasket.isEmpty()).toBe false
 
-
-class BasketFactory
-  constructor: ->
-
-  getEmptyBasket: ->
-    new EmptyBasket
-
-  getBasketWithItems: ->
-    new BasketWithItems
-
-
-class EmptyBasket
-  constructor: ->
-  total: -> 0
-  isEmpty: -> true
-
-class BasketWithItems extends EmptyBasket
-  items = []
-
-  constructor: ->
-    
-  addItem: (item) ->
-    items.push item
-
-  isEmpty: ->
-    if items.length > 0
-      false
-    else
-      true
-
-    
