@@ -14,15 +14,17 @@ class EmptyBasket
   isEmpty: -> true
 
 class BasketWithItems extends EmptyBasket
-  items = []
-
   constructor: ->
-    
+    @items = []
+
   addItem: (item) ->
-    items.push item
+    @items.push item
+
+  numberOfItems: ->
+    @items.length
 
   isEmpty: ->
-    if items.length > 0
+    if @items.length > 0
       false
     else
       true

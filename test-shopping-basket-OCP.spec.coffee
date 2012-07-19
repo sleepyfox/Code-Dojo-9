@@ -13,3 +13,8 @@ describe 'A shopping basket with one item in it', ->
     myBasket.addItem('Corn Flakes', 99)
     expect(myBasket.isEmpty()).toBe false
 
+  it 'should have one item in it', ->  
+    myBasket = (new BasketFactory).getBasketWithItems()
+    myBasket.addItem('Corn Flakes', 99)
+    expect(myBasket.numberOfItems()).toBe 1
+  
