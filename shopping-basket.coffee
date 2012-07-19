@@ -17,18 +17,20 @@ class BasketWithItems extends EmptyBasket
   constructor: ->
     @items = []
 
-  addItem: (item) ->
-    @items.push item
+  addItem: (name, price) ->
+    @items.push {name: name, price: price}
 
   numberOfItems: ->
     @items.length
 
+  total: ->
+    sum = 0
+    sum += item.price for item in @items
+    sum
+    
   isEmpty: ->
-    if @items.length > 0
-      false
-    else
-      true
-
+    @items.length is 0
+    
 exports.BasketFactory = BasketFactory
 exports.EmptyBasket = EmptyBasket
 exports.BasketWithItems = BasketWithItems

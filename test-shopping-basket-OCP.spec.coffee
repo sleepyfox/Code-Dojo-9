@@ -18,3 +18,7 @@ describe 'A shopping basket with one item in it', ->
     myBasket.addItem('Corn Flakes', 99)
     expect(myBasket.numberOfItems()).toBe 1
   
+  it 'should have a total of 99', ->
+    myBasket = (new BasketFactory).getBasketWithItems()
+    myBasket.addItem('Corn Flakes', 99)
+    expect(myBasket.total()).toBe 99
