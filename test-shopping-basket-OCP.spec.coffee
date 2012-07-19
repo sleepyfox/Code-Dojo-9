@@ -1,15 +1,16 @@
 describe 'The shopping basket', ->
   it 'should return a total of zero if it is empty', ->
-    basketFactory = new BasketFactory()
-    myBasket = basketFactory.getBasket()
-    expect(0).toBe myBasket.total()
+    myBasket = (new BasketFactory).getBasket()
+    expect(myBasket.isEmpty()).toBe true
+    expect(myBasket.total()).toBe 0
   
 class BasketFactory
   constructor: ->
 
   getBasket: ->
-    return(new Basket)
+    new Basket
 
 class Basket
   constructor: ->
   total: -> 0
+  isEmpty: -> true
