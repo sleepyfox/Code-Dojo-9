@@ -1,6 +1,6 @@
 Code Dojo 9
 ===========
-This is my worked example from the 9th meeting of the London Code Dojo in July 2012. Feel free to play around with it. There are several different solutions, in separate folders e.g. 'by-inheritance/' 
+This is my worked example from the 9th meeting of the London Code Dojo in July 2012. Feel free to play around with it. There are several different solutions, in separate folders e.g. 'by-inheritance/' and 'by-decorators/'
 
 From inside a folder you can run the code (assuming you have node.js with the coffee-script and jasmine-node packages installed) with:
 
