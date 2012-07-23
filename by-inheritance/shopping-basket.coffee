@@ -1,3 +1,7 @@
+VAT_MULTIPLIER = 1.20
+DELIVERY_BASE_PRICE = 250
+DELIVERY_PER_ITEM_PRICE = 50
+
 class BasketFactory
   constructor: ->
 
@@ -38,14 +42,14 @@ class BasketWithItems extends EmptyBasket
     
 class VATBasketWithItems extends BasketWithItems
   totalWithVAT: ->
-    Math.round(@total() * 1.20)
+    Math.round(@total() * VAT_MULTIPLIER)
 
 class DeliveryVATBasketWithItems extends VATBasketWithItems
   totalWithDelivery: -> 
-    @total() + 250 + (50 * @numberOfItems())
+    @total() + DELIVERY_BASE_PRICE + (DELIVERY_PER_ITEM_PRICE * @numberOfItems())
 
   totalWithVATAndDelivery: -> 
-    Math.round(@totalWithDelivery() * 1.20)
+    Math.round(@totalWithDelivery() * VAT_MULTIPLIER)
 
 
 exports.BasketFactory = BasketFactory

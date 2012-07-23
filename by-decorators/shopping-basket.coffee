@@ -49,11 +49,11 @@ class Decorator extends Basket
     
 class DeliveryBasket extends Decorator
   total: () ->
-    @basket.total() + 250 + @basket.numberOfItems() * 50
+    @basket.total() + DELIVERY_BASE_PRICE + @basket.numberOfItems() * DELIVERY_PER_ITEM_PRICE
 
 class VATBasket extends Decorator
   total: () ->
-    Math.round(@basket.total() * 1.20)
+    Math.round(@basket.total() * VAT_MULTIPLIER)
 
 exports.BasketFactory = BasketFactory
 exports.EmptyBasket = EmptyBasket
