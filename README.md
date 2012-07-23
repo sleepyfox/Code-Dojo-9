@@ -1,10 +1,12 @@
 Code Dojo 9
 ===========
-This is my worked example from the 9th meeting of the London Code Dojo in July 2012. Feel free to play around with it. You can run the code (assuming you have node and coffeescript installed) with:
+This is my worked example from the 9th meeting of the London Code Dojo in July 2012. Feel free to play around with it. There are several different solutions, in separate folders e.g. 'by-inheritance/' 
+
+From inside a folder you can run the code (assuming you have node.js with the coffee-script and jasmine-node packages installed) with:
 
     jasmine-node test-*
 
-I set up a watchr file (kata.watchr) so that the tests are run automatically every time you save a file in your editor, simply run watchr (if you have it installed) with:
+I set up a watchr file (kata.watchr) so that the tests are run automatically every time you save a file in your editor, simply run [watchr](https://github.com/mynyml/watchr/) with:
     
     watchr kata.watchr
 
